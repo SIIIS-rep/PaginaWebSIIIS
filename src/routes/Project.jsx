@@ -1,21 +1,21 @@
-import React, {useEffect, useState, useReducer} from "react";
-import {useForm} from "react-hook-form";
-import {useFirestore} from "../hooks/useFirestore";
-import {useFirestoreArticles} from "../hooks/useFirestoreArticles";
-import {ErrorsFirebase} from "../utils/ErrorsFirebase";
-import {getStorage, ref, deleteObject} from "firebase/storage";
-import Modal_Article from "../components/Modal_Article";
+import React, { useEffect, useState, useReducer } from "react";
+import { useForm } from "react-hook-form";
+import { useFirestore } from "../hooks/useFirestore";
+import { useFirestoreProjects } from "../hooks/useFirestoreProjects";
+import { ErrorsFirebase } from "../utils/ErrorsFirebase";
+import { getStorage, ref, deleteObject } from "firebase/storage";
+import Modal_Project from "../components/Modal_Project";
 import { getAuth } from "firebase/auth";
 import { getDownloadURL } from "firebase/storage";
 
-const Article = ({idPerson}) => {
+const Project = ({ idPerson }) => {
     const auth = getAuth();
     const currentUser = auth.currentUser;
     const {
-        loadingArticle,
-        getDataArticles,
-        deleteDataArticle,
-    } = useFirestoreArticles();
+        loadingProject,
+        getDataProjects,
+        deleteDataProject,
+    } = useFirestoreProjects();
 
     const {
         loading,
@@ -23,33 +23,34 @@ const Article = ({idPerson}) => {
         getData,
     } = useFirestore();
 
-    const {setError} = useForm();
+    const { setError } = useForm();
 
     const [users, setUsers] = useState([]);
-    const [allArticles, setAllArticles] = useState([]);
+    const [allProjects, setAllProjects] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const [uniqueYears, setUniqueYears] = useState([]);
-    const [estadoFilter, setEstadoFilter] = useState('');
-    const [anioFilter, setAnioFilter] = useState('');
     const [bannerUrl, setBannerUrl] = useState('');
+    const [estadoFilter, setEstadoFilter] = useState('');
+    const [uniqueYears, setUniqueYears] = useState([]);
+    const [anioFilter, setAnioFilter] = useState('');
+    const [categoriaFilter, setCategoriaFilter] = useState('');
 
-
-    const [articlesFiltered, dispatch] = useReducer((state, action) => {
+    const [projectsFiltered, dispatch] = useReducer((state, action) => {
         switch (action.type) {
             case "filter":
-                return action.payload.data.filter(article => {
+                return action.payload.data.filter(project => {
                     const searchLower = action.payload.filter.toLowerCase();
-                    const inTitle = article.title.toLowerCase().includes(searchLower);
+                    const inTitle = project.title.toLowerCase().includes(searchLower);
 
                     return inTitle;
                 });
             case "all":
                 return action.payload;
             case "customFilter":
-                return action.payload.data.filter(article => {
-                    const matchEstado = action.payload.estado ? article.articleState.toLowerCase() === action.payload.estado.toLowerCase() : true;
-                    const matchAnio = action.payload.anio ? article.date.includes(action.payload.anio) : true;
-                    return matchEstado && matchAnio;
+                return action.payload.data.filter(project => {
+                    const matchEstado = action.payload.estado ? project.projectState.toLowerCase() === action.payload.estado.toLowerCase() : true;
+                    const matchCategoria = action.payload.categoria ? project.projectCategory.toLowerCase() === action.payload.categoria.toLowerCase() : true;
+                    const matchAnio = action.payload.anio ? project.date.includes(action.payload.anio) : true;
+                    return matchEstado && matchAnio && matchCategoria;
                 });
             default:
                 return state;
@@ -59,17 +60,18 @@ const Article = ({idPerson}) => {
     useEffect(() => {
         const fetchData = async () => {
             const usersData = await getDataUsers();
-            const articlesData = await getDataArticles();
+            const projectsData = await getDataProjects();
             setUsers(usersData);
-            setAllArticles(articlesData);
-            dispatch({ type: "all", payload: articlesData });
+            setAllProjects(projectsData);
+            dispatch({ type: "all", payload: projectsData });
+
             // Extraer años únicos
-            const years = [...new Set(articlesData.map(article => article.date.slice(0, 4)))];
+            const years = [...new Set(projectsData.map(project => project.date.slice(0, 4)))];
             setUniqueYears(years.sort((a, b) => b - a));
 
             //imagen banner
             const storage = getStorage();
-            const bannerRef = ref(storage, 'images_banner/articulos.jpeg');
+            const bannerRef = ref(storage, 'images_banner/proyectos.jpeg');
 
             getDownloadURL(bannerRef)
                 .then((url) => {
@@ -84,8 +86,8 @@ const Article = ({idPerson}) => {
 
     if (
         loading.getDataUsers ||
-        loadingArticle.getDataArticles ||
-        (loadingArticle.getDataArticles === undefined && loading.getDataUsers)
+        loadingProject.getDataProjects ||
+        (loadingProject.getDataProjects === undefined && loading.getDataUsers)
     ) {
         return (
             <div className="text-center text-gray-500 text-xl font-bold h-screen">
@@ -94,16 +96,16 @@ const Article = ({idPerson}) => {
         );
     }
 
-    const handleDelete = async (article) => {
+    const handleDelete = async (project) => {
         try {
-            await deleteDataArticle(article.id);
+            await deleteDataProject(project.id);
             const storage = getStorage();
-            const imageRef = ref(storage, article.locationImage);
+            const imageRef = ref(storage, project.locationImage);
             await deleteObject(imageRef);
             window.location.reload(); // opcional: reemplazar por manejo de estado
         } catch (error) {
-            const {code, message} = ErrorsFirebase(error.code);
-            setError(code, {message});
+            const { code, message } = ErrorsFirebase(error.code);
+            setError(code, { message });
         }
     };
 
@@ -114,17 +116,17 @@ const Article = ({idPerson}) => {
             type: "filter",
             payload: {
                 filter: searchValue,
-                data: allArticles
+                data: allProjects
             },
         });
     };
 
-    const handleViewArticle = (articleId) => {
-        window.location.href = `/article/${articleId}`;
-    };
-
     const handleEstadoFilter = (e) => {
         setEstadoFilter(e.target.value);
+    };
+
+    const handleCategoriaFilter = (e) => {
+        setCategoriaFilter(e.target.value);
     };
 
     const handleAnioFilter = (e) => {
@@ -136,57 +138,60 @@ const Article = ({idPerson}) => {
             type: "customFilter",
             payload: {
                 estado: estadoFilter,
+                categoria: categoriaFilter,
                 anio: anioFilter,
-                data: allArticles,
+                data: allProjects,
             },
         });
     };
 
-    const renderArticleCard = (article) => {
-        const user = users.find(u => u.userUID === article.userUID);
+    const handleViewProject = (projectId) => {
+        window.location.href = `/project/${projectId}`;
+    };
 
-        const stateStyles = {
-            "en curso": "bg-blue-100 text-blue-800",
-            "finalizado": "bg-green-100 text-green-800"
-        };
+    const renderProjectCard = (project) => {
+        const user = users.find(u => u.userUID === project.userUID);
+        const isOwnerOrAdmin =
+            currentUser?.uid === project.userUID ||
+            users.find(u => u.userUID === currentUser?.uid)?.role === "admin";
 
         return (
-            <div key={article.id} className="group relative rounded-lg border">
+            <div key={project.id} className="group relative rounded-lg border">
                 <div className="relative w-full h-80 bg-white rounded-t-lg overflow-hidden">
                     <img
-                        src={article.imageArticle}
-                        alt={article.title}
+                        src={project.imageProject}
+                        alt={project.title}
                         className="w-full h-full object-center object-cover"
                     />
                 </div>
                 <div className="rounded-b-lg w-full p-4 bg-gray-800 text-white">
-                    <span className={`text-xs font-medium px-3 py-0.5 rounded-full ${stateStyles[article.articleState] || "bg-gray-100 text-gray-800"}`}>
-                        {article.articleState}
-                    </span>
-                    <div className="flex justify-between items-start">
-                        <div>
-                            <br />
-                            <p className="font-semibold">{article.title}</p>
-                            <p className="font-semibold text-slate-200">{article.description}</p>
-                        </div>
+                    {/* CATEGORÍA al inicio */}
+                    <div className="mb-2">
+                        <span
+                            className="inline-block px-3 py-1 rounded-full bg-blue-200 text-blue-800 text-xs font-semibold">
+                            {project.projectCategory}
+                        </span>
                     </div>
+
+                    <p className="font-semibold">{project.title}</p>
+                    <p className="font-semibold text-slate-200">{project.description}</p>
+
                     <div className="flex justify-end gap-4 mt-4">
                         <div>
                             {currentUser ? (
-                                <Modal_Article dataArticle1={article} functionEdit="update" />
+                                <Modal_Project dataProject1={project} functionEdit="update" />
                             ) : (
                                 <button
-                                    onClick={() => handleViewArticle(article.id)}
+                                    onClick={() => handleViewProject(project.id)}
                                     className="w-full py-2.5 px-5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
                                 >
                                     Abrir
-                                </button>
-                            )}
+                                </button>)}
                         </div>
-                        {(currentUser?.uid === article.userUID || users.find(u => u.userUID === currentUser?.uid)?.role === "admin") && (
+                        {(currentUser?.uid === project.userUID || users.find(u => u.userUID === currentUser?.uid)?.role === "admin") && (
                             <div>
                                 <button
-                                    onClick={() => handleDelete(article)} // esta sí es tu función definida más arriba
+                                    onClick={() => handleDelete(project)}
                                     type="button"
                                     className="p-3 bg-red-500 hover:bg-red-700 text-white rounded-lg text-sm"
                                 >
@@ -195,6 +200,7 @@ const Article = ({idPerson}) => {
                             </div>
                         )}
                     </div>
+
                     <div className="flex items-center mt-4 space-x-4">
                         <img
                             className="w-10 h-10 border rounded-full"
@@ -203,9 +209,27 @@ const Article = ({idPerson}) => {
                         />
                         <div>
                             <div>{user ? `${user.name} ${user.lastName}` : "Usuario desconocido"}</div>
-                            <div className="text-sm text-gray-300">{article.date}</div>
+                            <div className="text-sm text-gray-300">{project.date}</div>
                         </div>
                     </div>
+
+                    {/* ESTADO al final con colores */}
+                    <div className="mt-4 flex justify-end">
+                        <span
+                            className={`inline-block px-3 py-1 rounded-full text-xs font-semibold
+                            ${project.projectState === 'Terminado'
+                                    ? 'bg-green-200 text-green-800'
+                                    : project.projectState === 'Aprobado'
+                                        ? 'bg-yellow-200 text-yellow-800'
+                                        : project.projectState === 'En espera de aprobación'
+                                            ? 'bg-red-200 text-red-800'
+                                            : 'bg-gray-200 text-gray-800'
+                                }`}
+                        >
+                            {project.projectState}
+                        </span>
+                    </div>
+
                 </div>
             </div>
         );
@@ -220,7 +244,7 @@ const Article = ({idPerson}) => {
                     alt="Fondo SIIIS"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-                    <h1 className="text-white text-4xl lg:text-5xl font-bold">ARTÍCULOS</h1>
+                    <h1 className="text-white text-4xl lg:text-5xl font-bold">PROYECTOS</h1>
                 </div>
             </div>
             {/* Navbar */}
@@ -232,8 +256,20 @@ const Article = ({idPerson}) => {
                             onChange={handleEstadoFilter}
                         >
                             <option value="">Estado</option>
-                            <option value="Finalizado">Finalizado</option>
-                            <option value="En curso">En curso</option>
+                            <option value="Terminado">Terminado</option>
+                            <option value="Aprobado">Aprobado</option>
+                            <option value="En espera de aprobación">En espera de aprobación</option>
+                        </select>
+
+                        <select
+                            className="p-2 text-sm bg-gray-50 border rounded-lg min-w-[120px]"
+                            onChange={handleCategoriaFilter}
+                        >
+                            <option value="">Categoria</option>
+                            <option value="Software">Software</option>
+                            <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+                            <option value="Telecomunicaciones">Telecomunicaciones</option>
+                            <option value="Otra">Otra</option>
                         </select>
 
                         <select
@@ -257,10 +293,11 @@ const Article = ({idPerson}) => {
 
                         {currentUser && (
                             <div className="ml-2">
-                                <Modal_Article dataArticle1 functionEdit="create" />
+                                <Modal_Project dataProject1 functionEdit="create" />
                             </div>
                         )}
                     </div>
+
                     <div className="flex md:order-2 w-full md:w-auto mt-2 md:mt-0">
                         <form className="w-full">
                             <label htmlFor="search" className="sr-only">Buscar</label>
@@ -275,9 +312,10 @@ const Article = ({idPerson}) => {
                                 <input
                                     type="search"
                                     id="search"
+                                    value={searchTerm}
                                     onChange={handleSearch}
-                                    className="block p-2 pl-10 w-full text-sm bg-gray-50 border rounded-lg"
-                                    placeholder="Buscar artículos..."
+                                    className="block p-3 pl-10 w-full text-sm bg-gray-50 border rounded-lg"
+                                    placeholder="Buscar proyectos..."
                                 />
                             </div>
                         </form>
@@ -285,15 +323,15 @@ const Article = ({idPerson}) => {
                 </div>
             </nav>
 
-            {/* Artículos */}
+            {/* Proyectos */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="py-6">
                     <div className="grid gap-6 lg:grid-cols-3">
-                        {articlesFiltered.map(article =>
+                        {projectsFiltered.map(project =>
                             idPerson ? (
-                                idPerson === article.userUID && renderArticleCard(article)
+                                idPerson === project.userUID && renderProjectCard(project)
                             ) : (
-                                renderArticleCard(article)
+                                renderProjectCard(project)
                             )
                         )}
                     </div>
@@ -303,4 +341,4 @@ const Article = ({idPerson}) => {
     );
 };
 
-export default Article;
+export default Project;

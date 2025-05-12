@@ -10,10 +10,12 @@ import Register from "./routes/Register";
 import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
 import Article from "./routes/Article";
+import Project from "./routes/Project";
 import Profile from "./routes/Profile";
 import Users from "./routes/Users";
 import AboutUs from "./routes/AboutUs";
 import ArticleDetail from "./routes/ArticleDetail";
+import ProjectDetail from "./routes/ProjectDetail";
 
 // import components
 import "flowbite";
@@ -51,7 +53,9 @@ const App = () => {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/AboutUs" element={<AboutUs/>}/>
                 <Route path="/Article" element={<Article/>}/>
+                <Route path="/Project" element={<Project/>}/>
                 <Route path="/Article/:id" element={<ArticleDetail/>}/>
+                <Route path="/Project/:id" element={<ProjectDetail/>}/>
                 <Route
                     path="/profile"
                     element={
