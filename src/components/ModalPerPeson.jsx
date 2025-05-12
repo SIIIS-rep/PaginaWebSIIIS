@@ -20,7 +20,7 @@ const ModalPerPerson = ({ item, data }) => {
   const { deleteData } = useFirestore();
   const { deleteDataArticle } = useFirestoreArticles();
   const { deleteDataReview } = useFirestoreReviews();
-  const { deleteUserID } = useContext(UserContext);
+  const { deleteUserID, user } = useContext(UserContext);
 
   const { setError } = useForm();
 
@@ -85,7 +85,7 @@ const ModalPerPerson = ({ item, data }) => {
           </div>
 
           {/* Botón de hoja de vida */}
-          {item.curriculumPDF && (
+          {user && item.curriculumPDF && (
             <div className="w-full text-center mb-4">
               <a
                 href={item.curriculumPDF}

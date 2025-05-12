@@ -264,8 +264,9 @@ const Footer = () => {
                         className="text-center p-4"
                         style={{backgroundColor: "#003054"}} // Este es el mismo color que el fondo azul del footer
                     >
-                        Copyright © 2025 SIIS | Todos los derechos reservados
+                        Copyright © 2025 SIIIS | Todos los derechos reservados
                         <br/>
+                        {/*}
                         <a className="text-white" href="/privacy-policy">
                             Políticas de Privacidad
                         </a>{" "}
@@ -281,7 +282,8 @@ const Footer = () => {
                         <a className="text-white" href="https://adasdigital.com/">
                             ADAS Agencia Digital
                         </a>
-                        <br/>
+                        */}
+                        
                     </div>
 
                 </div>

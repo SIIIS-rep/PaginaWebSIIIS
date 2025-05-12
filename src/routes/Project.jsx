@@ -102,10 +102,12 @@ const Project = ({ idPerson }) => {
             const storage = getStorage();
             const imageRef = ref(storage, project.locationImage);
             await deleteObject(imageRef);
+            alert("Proyecto eliminado correctamente");
             window.location.reload(); // opcional: reemplazar por manejo de estado
         } catch (error) {
             const { code, message } = ErrorsFirebase(error.code);
             setError(code, { message });
+            window.location.reload();
         }
     };
 

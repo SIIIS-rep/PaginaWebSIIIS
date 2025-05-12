@@ -100,10 +100,12 @@ const Article = ({idPerson}) => {
             const storage = getStorage();
             const imageRef = ref(storage, article.locationImage);
             await deleteObject(imageRef);
+            alert("Artículo eliminado correctamente");
             window.location.reload(); // opcional: reemplazar por manejo de estado
         } catch (error) {
             const {code, message} = ErrorsFirebase(error.code);
             setError(code, {message});
+            window.location.reload();
         }
     };
 

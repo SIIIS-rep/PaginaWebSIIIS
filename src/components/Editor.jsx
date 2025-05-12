@@ -172,8 +172,8 @@ const EditorTiny = ({ dataArticle1, functionEdit }) => {
         throw new Error("Por favor selecciona una imagen válida (jpg, png, etc).");
       }
 
-      if (file.size > 2 * 1024 * 1024) {
-        throw new Error("La imagen debe pesar menos de 2MB.");
+      if (file.size > 10 * 1024 * 1024) {
+        throw new Error("La imagen debe pesar menos de 10MB.");
       }
 
       // Eliminar imagen anterior si existía

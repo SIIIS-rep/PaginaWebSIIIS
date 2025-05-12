@@ -308,8 +308,8 @@ const EditorTiny = ({ dataProject1: dataProject1, functionEdit }) => {
                 return;
             }
 
-            if (file.size > 2 * 1024 * 1024) {
-                alert("La imagen debe pesar menos de 2MB.");
+            if (file.size > 10 * 1024 * 1024) {
+                alert("La imagen debe pesar menos de 10MB.");
                 return;
             }
 
