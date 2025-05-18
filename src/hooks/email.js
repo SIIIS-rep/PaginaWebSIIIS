@@ -7,10 +7,10 @@ const Email = () => {
 
     emailjs
       .sendForm(
-        "service_f3257sq",
-        "template_fxqjp1f",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         e.target,
-        "user_5X9G3MqKj0zH8k1hJg2xQ"
+        import.meta.env.VITE_EMAILJS_USER_ID
       )
       .then(
         (result) => {
