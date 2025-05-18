@@ -1,4 +1,4 @@
-import Members from "../components/members";
+import Members from "../components/Members";
 import Mision_Vision from "../components/Mision_Vision";
 import React, { useState } from "react";
 
