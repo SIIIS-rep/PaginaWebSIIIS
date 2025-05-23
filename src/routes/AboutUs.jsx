@@ -14,7 +14,7 @@ const AboutUs = () => {
     },
     {
       nombre: "Jimmy Zea",
-      correo: "yessidduarte7@gmail.com",
+      correo: "jimmy.zea@uptc.edu.co",
       imagen: "https://firebasestorage.googleapis.com/v0/b/siiis-a2398.appspot.com/o/images_about%2FJimmyZea.jpeg?alt=media&token=12f12f9b-f0f1-4a28-ad24-709d80821beb"
     }
   ];
