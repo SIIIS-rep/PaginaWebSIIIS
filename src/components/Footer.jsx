@@ -12,36 +12,40 @@ const Footer = () => {
                         {/* Column 1: Información de contacto */}
                         <div>
                             <h4 className="text-lg font-bold mb-4">Información de contacto</h4>
-                            <p className="flex items-center mb-2">
+                            <p className="flex items-center mb-2 text-white">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="w-5 h-5 mr-2"
-                                    viewBox="0 0 24 24"
                                     fill="none"
-                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    stroke="white"
                                     strokeWidth="2"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                 >
-                                    <path
-                                        d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM5 19V5h14v14H5z"/>
+                                    <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
                                 </svg>
                                 Calle 4 A Sur No. 15-134, Sogamoso, Boyacá
                             </p>
+
                             <p className="flex items-center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="w-5 h-5 mr-2"
+                                    width="24"
+                                    height="24"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
                                     strokeWidth="2"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
+                                    className="feather feather-phone mr-2"
                                 >
-                                    <path d="M21 12l-8-8-4 4-3-3-6 6h16z"/>
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                                 </svg>
-                                87707721
+                                +57 87707721
                             </p>
                         </div>
 
@@ -283,13 +287,14 @@ const Footer = () => {
                             ADAS Agencia Digital
                         </a>
                         */}
-                        
+
                     </div>
 
                 </div>
             </footer>
         </>
-    );
+    )
+        ;
 };
 
 export default Footer;
