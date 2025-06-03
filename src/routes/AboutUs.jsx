@@ -58,7 +58,7 @@ const AboutUs = () => {
       <div className="relative w-full h-80 overflow-hidden">
         <img
           className="w-full h-full object-cover object-center"
-          src="https://i.imgur.com/wVn9tnw.jpeg" // Enlace directo a la imagen de Imgur
+          src="https://firebasestorage.googleapis.com/v0/b/siiis-a2398.appspot.com/o/images_slider%2FWhatsApp%20Image%202022-11-22%20at%2011.19.02%20AM.jpeg?alt=media&token=b69492c9-086b-4739-adac-7dc68ea9672b" 
           alt="Fondo SIIIS"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">

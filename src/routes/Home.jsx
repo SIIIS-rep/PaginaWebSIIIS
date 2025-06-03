@@ -223,43 +223,42 @@ const Home = () => {
                 <div className="flex flex-wrap justify-center gap-2 p-2">
                     {/* Card 1 */}
                     <div
-                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-72 h-80 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
+                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-56 h-64 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
                         <h2 className="text-8xl font-bold text-[#7C501C] group-hover:text-[#5A3210] transition-colors duration-300">S</h2>
                         <p className="text-2xl text-[#947646] group-hover:text-[#5A3210] transition-colors duration-300">emillero</p>
-                        <img src="https://i.imgur.com/cR8iV6g.png" className="w-32 h-32 object-contain"/>
+                        <img src="https://res.cloudinary.com/drcjskiqi/image/upload/v1748971502/def1_yhslcm.png" className="w-20 h-20 object-contain"/>
                     </div>
 
                     {/* Card 2 */}
                     <div
-                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-72 h-80 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
+                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-56 h-64 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
                         <h2 className="text-8xl font-bold text-[#7C501C] group-hover:text-[#5A3210] transition-colors duration-300">I</h2>
                         <p className="text-2xl text-[#947646] group-hover:text-[#5A3210] transition-colors duration-300">nvestigación</p>
-                        <img src="https://i.imgur.com/eMIinFD.png" className="w-32 h-32 object-contain"/>
+                        <img src="https://res.cloudinary.com/drcjskiqi/image/upload/v1748971502/def2_itlf0b.png" className="w-14 h-14 object-contain"/>
                     </div>
 
                     {/* Card 3 */}
                     <div
-                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-72 h-80 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
+                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-56 h-64 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
                         <h2 className="text-8xl font-bold text-[#7C501C] group-hover:text-[#5A3210] transition-colors duration-300">I</h2>
                         <p className="text-2xl text-[#947646] group-hover:text-[#5A3210] transition-colors duration-300">nnovación</p>
-                        <img src="https://i.imgur.com/VQPRV1y.png" className="w-32 h-32 object-contain"/>
+                        <img src="https://res.cloudinary.com/drcjskiqi/image/upload/v1748971502/def3_tlorht.png" className="w-14 h-14 object-contain"/>
                     </div>
 
                     {/* Card 4 */}
                     <div
-                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-72 h-80 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
+                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-56 h-64 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
                         <h2 className="text-8xl font-bold text-[#7C501C] group-hover:text-[#5A3210] transition-colors duration-300">I</h2>
                         <p className="text-2xl text-[#947646] group-hover:text-[#5A3210] transition-colors duration-300">ngeniería</p>
-                        <img src="https://i.imgur.com/Fio9MvZ.png" alt="Ingeniería"
-                             className="w-32 h-32 object-contain"/>
+                        <img src="https://res.cloudinary.com/drcjskiqi/image/upload/v1748971502/def4_nigdaq.png" alt="Ingeniería" className="w-14 h-14 object-contain"/>
                     </div>
 
                     {/* Card 5 */}
                     <div
-                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-72 h-80 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
+                        className="bg-[#F7D467] hover:bg-[#F5BC4A] border-2 border-[#947646] rounded-lg p-4 w-56 h-64 shadow-md flex flex-col items-center transition-colors duration-300 group space-y-4">
                         <h2 className="text-8xl font-bold text-[#7C501C] group-hover:text-[#5A3210] transition-colors duration-300">S</h2>
                         <p className="text-2xl text-[#947646] group-hover:text-[#5A3210] transition-colors duration-300">istemas</p>
-                        <img src="https://i.imgur.com/uRRGblH.png" alt="Sistemas" className="w-32 h-32 object-contain"/>
+                        <img src="https://res.cloudinary.com/drcjskiqi/image/upload/v1748971502/def5_rwqfhk.png" alt="Sistemas" className="w-14 h-14 object-contain"/>
                     </div>
                 </div>
 

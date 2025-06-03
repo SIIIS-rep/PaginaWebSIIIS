@@ -34,5 +34,16 @@
     "postcss": "^8.5.3",
     "tailwindcss": "3.1.6",
     "vite": "^6.2.2"
+  },
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroPulido2/PaginaSIIIS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroPulido2/PaginaSIIIS/issues"
   }
 }
