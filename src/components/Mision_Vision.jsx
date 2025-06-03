@@ -20,11 +20,7 @@ const Mision_Vision = () => {
                 Misión
               </h3>
               <p className="text-gray-600 mb-8">
-                Promover la investigación a jóvenes para ayudar e impulsar al
-                desarrollo por medio de la Tecnología y la transformación
-                digital que van surgiendo con el tiempo, capacitándolos y
-                guiándolos por sus propias ideas germinando sus capacidades más
-                significativas.
+                Fomentar la investigación a jóvenes para ayudar a impulsar al desarrollo de ideas innovadoras en tecnología y transformación digital. Promoviendo un espacio autónomo de formación, colaboración y crecimiento, donde los participantes fortalecen sus capacidades mediante la experimentación, la capacitación constante y el acompañamiento en proyectos que generen impacto académico, social y humanístico.
                 <br />
                 <br />
                 Imagen:
@@ -474,11 +470,7 @@ const Mision_Vision = () => {
                   Visión
                 </h3>
                 <p className="text-gray-600 mb-8">
-                  Proyectar al 2030 el medio por el cual los estudiantes se
-                  conecten con la curiosidad, llegando a crear espacios para las
-                  lluvias de ideas, e temas de innovación, tecnología y
-                  desarrollando aplicaciones de software que permitan solucionar
-                  dificultades en el entorno social y Humanístico.
+                  Consolidar al semillero como un referente de innovación tecnológica y formación investigativa para el año 2030, siendo un entorno donde los estudiantes puedan explorar su curiosidad, intercambiar ideas y liderar iniciativas que resuelvan desafíos sociales mediante la innovación, la investigación e ingeniería de sistemas.
                   <br />
                   <br />
                   Imagen:
