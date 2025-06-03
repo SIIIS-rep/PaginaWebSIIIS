@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
             {/* Footer Section */}
-            <footer className="text-center bg-[#003054] text-white">
+            <footer className="text-center bg-[#002B4C] text-white">
                 <div className="px-6 pt-6">
                     {/* Grid layout for 3 columns */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -266,7 +266,7 @@ const Footer = () => {
                     {/* Footer bottom */}
                     <div
                         className="text-center p-4"
-                        style={{backgroundColor: "#003054"}} // Este es el mismo color que el fondo azul del footer
+                        style={{backgroundColor: "#002B4C"}} // Este es el mismo color que el fondo azul del footer
                     >
                         Copyright © 2025 SIIIS | Todos los derechos reservados
                         <br/>

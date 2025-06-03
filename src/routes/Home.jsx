@@ -194,7 +194,7 @@ const Home = () => {
 
             <section className="pb-20">
                 {/* Sección azul: Bienvenida centrada */}
-                <div className="w-screen bg-[#003366] text-white relative px-10">
+                <div className="w-screen bg-[#002B4C] text-white relative px-10">
                     <div className="flex items-center justify-center p-6">
                         {/* Texto centrado */}
                         <div className="text-center max-w-3xl">

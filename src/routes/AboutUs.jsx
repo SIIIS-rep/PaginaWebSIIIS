@@ -67,7 +67,7 @@ const AboutUs = () => {
       </div>
 
       {/* Sección azul con texto y logo */}
-      <div className="w-full bg-blue-900 flex flex-col lg:flex-row items-center justify-center px-8 lg:px-32 py-12 gap-10" style={{ backgroundColor: '#0D3B66' }}>
+      <div className="w-full bg-blue-900 flex flex-col lg:flex-row items-center justify-center px-8 lg:px-32 py-12 gap-10" style={{ backgroundColor: '#002B4C' }}>
         {/* Texto */}
         <div className="lg:w-7/12 text-white text-justify">
           <p className="text-base leading-7">
