@@ -80,7 +80,7 @@ const Navbar = () => {
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
                                     <NavLink to="/">
-                                        <img
+                                        <img 
                                             className="block lg:hidden h-20 w-auto"
                                             src="https://firebasestorage.googleapis.com/v0/b/siiis-a2398.appspot.com/o/image_resource%2FLogo_white.png?alt=media&token=a444e9fd-bc8f-4918-a620-30e28a26e3ca"
                                             alt="Workflow"

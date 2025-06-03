@@ -86,7 +86,7 @@ const AboutUs = () => {
         <div className="flex justify-center items-center">
           <img
             className="w-52 h-52 object-contain"
-            src="https://firebasestorage.googleapis.com/v0/b/siiis-a2398.appspot.com/o/image_resource%2Flogo_black.png?alt=media&token=865e49f6-bc1f-46ec-8e4e-923f503f0e96"
+            src="https://firebasestorage.googleapis.com/v0/b/siiis-a2398.appspot.com/o/image_resource%2FLogo_white.png?alt=media&token=a444e9fd-bc8f-4918-a620-30e28a26e3ca"
             alt="Logo SIIIS"
           />
         </div>
@@ -117,7 +117,7 @@ const AboutUs = () => {
             href="https://www.grupogalash.com/researchers/junco"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-800 font-medium hover:underline"
+            className="text-yellow-800 font-medium hover:underline"
           >
             Leer más
           </a>
@@ -169,7 +169,7 @@ const AboutUs = () => {
 
         {/* Subtítulo */}
         <p className="p-2 font-normal text-center text-base text-gray-600">
-          Ingenieros de Sistemas y Computación
+          Estudiantes de la escuela de Ingeniería de Sistemas y Computación, facultad Sogamoso
         </p>
 
         {/* Avatares */}
