@@ -202,11 +202,12 @@ const Home = () => {
                                 BIENVENIDOS AL SEMILLERO DE INVESTIGACIÓN SIIIS
                             </h2>
                             <p className="mb-4 text-sm md:text-base">
-                                El grupo semillero (SIIIS) nace desde 2015 con el fin de demostrar actividades de
-                                investigación orientadas en la ingeniería de sistemas teniendo en cuenta con la
-                                colaboración del grupo de investigación GALASH de la seccional de Sogamoso, por lo
-                                tanto, teniendo en cuenta la cantidad de integrantes se creará proyectos de
-                                fortalecimiento para las diversas actividades.
+                                El Semillero de Investigación SIIIS, perteneciente a la carrera de Ingeniería de Sistemas y Computación de la
+                                Universidad Pedagógica y Tecnológica de Colombia (UPTC), surge en 2015 con el propósito de impulsar la
+                                investigación, la innovación y el desarrollo en ingeniería de sistemas. A través de proyectos
+                                individuales y colaborativos, fortaleciendo las competencias técnicas, creativas y emocionales de sus
+                                integrantes. Su labor se apoya en el uso de herramientas TIC y procesos de Transformación Digital para
+                                orientar de forma innovadora a estudiantes, docentes y demás interesados.
                             </p>
                             <a
                                 href="/AboutUs"

@@ -73,7 +73,7 @@ const AboutUs = () => {
           <p className="text-base leading-7">
             El Semillero de Investigación SIIIS, perteneciente a la carrera de Ingeniería de Sistemas y Computación de la
             Universidad Pedagógica y Tecnológica de Colombia (UPTC), surge en 2015 con el propósito de impulsar la
-            investigación, la innovación y el desarrollo en ingeniería de sistemas. Esto, a través de proyectos
+            investigación, la innovación y el desarrollo en ingeniería de sistemas. A través de proyectos
             individuales y colaborativos, fortaleciendo las competencias técnicas, creativas y emocionales de sus
             integrantes. Su labor se apoya en el uso de herramientas TIC y procesos de Transformación Digital para
             orientar de forma innovadora a estudiantes, docentes y demás interesados.
