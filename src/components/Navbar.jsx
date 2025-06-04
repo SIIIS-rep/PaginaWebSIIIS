@@ -105,22 +105,18 @@ const Navbar = () => {
                                                         target="_blank"
                                                         href={item.href}
                                                         rel="noopener noreferrer"
-                                                        className={classNames(
-                                                            item.current
-                                                                ? "bg-gray-900 text-white"
-                                                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                                            "px-3 py-2 rounded-md text-sm font-medium"
-                                                        )}
+                                                        className="px-3 py-2 text-base font-medium text-gray-300 hover:text-[#F5BC4A]"
                                                     >
                                                         {item.name}
                                                     </a>
+
                                                 ) : (
                                                     <NavLink
                                                         to={item.href}
                                                         className={({ isActive }) =>
                                                             classNames(
                                                                 isActive ? "text-[#F5BC4A]" : "text-gray-300 hover:text-[#F5BC4A]",
-                                                                "px-3 py-2 text- font-medium"
+                                                                "px-3 py-2 text-base font-medium"
                                                             )
                                                         }
                                                         aria-current={item.current ? "page" : undefined}

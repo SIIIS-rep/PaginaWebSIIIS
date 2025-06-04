@@ -26,49 +26,31 @@ const Footer = () => {
                                     <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
                                 </svg>
-                                Calle 4 A Sur No. 15-134, Sogamoso, Boyacá
+                                Avenida Central del Norte 39-115, 150003 Tunja, Tunja, Boyacá, Colombia
                             </p>
 
                             <p className="flex items-center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-phone mr-2"
+                                    className="w-6 h-6 mr-2"
+                                    viewBox="0 0 32 32"
+                                    fill="currentColor"
                                 >
                                     <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                        d="M16.003 3C9.374 3 3.875 8.5 3.875 15.125c0 2.668.875 5.126 2.343 7.118L3 29l6.974-3.195c1.85 1.017 3.974 1.57 6.03 1.57 6.628 0 12.127-5.5 12.127-12.125S22.63 3 16.003 3zm.09 21.843c-1.736 0-3.434-.468-4.933-1.347l-.355-.207-4.14 1.901.878-4.033-.238-.37c-1.032-1.59-1.58-3.424-1.58-5.258 0-5.418 4.419-9.843 9.845-9.843 5.426 0 9.844 4.425 9.844 9.843 0 5.419-4.418 9.814-9.822 9.814zm5.62-7.314c-.306-.153-1.818-.89-2.1-.99-.282-.099-.489-.152-.696.154-.206.306-.799.99-.979 1.195-.18.205-.359.23-.666.077-.306-.154-1.292-.476-2.462-1.515-.91-.812-1.525-1.814-1.703-2.12-.18-.306-.02-.47.135-.622.138-.135.306-.358.459-.537.154-.18.204-.306.307-.511.102-.205.05-.384-.026-.537-.077-.153-.695-1.677-.95-2.296-.25-.6-.504-.518-.695-.527-.18-.008-.384-.01-.589-.01-.205 0-.538.077-.82.384-.282.306-1.077 1.05-1.077 2.555 0 1.504 1.103 2.958 1.257 3.162.154.205 2.164 3.306 5.238 4.632.732.316 1.303.505 1.748.647.734.233 1.402.2 1.93.122.589-.088 1.818-.741 2.075-1.456.256-.715.256-1.327.179-1.456-.077-.128-.282-.204-.589-.358z"/>
                                 </svg>
-                                +57 87707721
+                                +57 3138426821
                             </p>
                         </div>
 
-                        {/* Column 2: Grupo de investigación */}
-                        <div>
-                            <h4 className="text-lg font-bold mb-4">Grupo de investigación</h4>
+                        {/* Column 2: Numero de contacto */}
+                        <div className="text-center">
+                            <h4 className="text-lg font-bold mb-4 text-white">Formulario de contacto</h4>
                             <a
-                                href="https://www.grupogalash.com/"
-                                className="
-                                    inline-block
-                                    px-3 py-1
-                                    bg-white bg-opacity-10
-                                    text-yellow-300
-                                    font-semibold
-                                    rounded
-                                    border border-yellow-300
-                                    hover:bg-yellow-300 hover:text-[#003054]
-                                    transition
-                                    duration-200
-                                    ease-in-out
-                                    transform hover:-translate-y-0.5"
+                                href="/Contact"
+                                className="flex items-center justify-center text-blue-500 hover:text-blue-700"
                             >
-                                GALASH
+                                Ir a Contacto
                             </a>
                         </div>
 
@@ -113,32 +95,27 @@ const Footer = () => {
                                     href="https://twitter.com/SIIIS2013"
                                     type="button"
                                     className="
-                                        rounded-full border-2 border-white text-white
-                                        w-9 h-9 m-1
-                                    -   hover:bg-black hover:bg-opacity-5
-                                    +   hover:bg-white hover:text-[#003054]
-                                    +   hover:shadow-lg
-                                    +   hover:scale-110
-                                        focus:outline-none focus:ring-0
-                                        transition duration-200 ease-in-out
+                                    rounded-full border-2 border-white text-white
+                                    w-9 h-9 m-1
+                                    hover:bg-white hover:text-[#003054]
+                                    hover:shadow-lg
+                                    hover:scale-110
+                                    focus:outline-none focus:ring-0
+                                    transition duration-200 ease-in-out
+                                    flex items-center justify-center
                                     "
                                 >
                                     <svg
-                                        aria-hidden="true"
-                                        focusable="false"
-                                        data-prefix="fab"
-                                        data-icon="twitter"
-                                        className="w-3 h-full mx-auto"
-                                        role="img"
                                         xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512"
+                                        className="w-4 h-4"
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
                                     >
                                         <path
-                                            fill="currentColor"
-                                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                                        />
+                                            d="M19.778 2H4.222A2.222 2.222 0 0 0 2 4.222v15.556A2.222 2.222 0 0 0 4.222 22h15.556A2.222 2.222 0 0 0 22 19.778V4.222A2.222 2.222 0 0 0 19.778 2zM16.016 17h-2.314l-2.678-4.223L8.25 17H6l4.02-5.815L6.366 7h2.314l2.435 3.842L13.685 7H16l-4.065 5.487L16.016 17z"/>
                                     </svg>
                                 </a>
+
                                 <a
                                     href="https://www.instagram.com/semillero_siiis/"
                                     type="button"
@@ -270,23 +247,6 @@ const Footer = () => {
                     >
                         Copyright © 2025 SIIIS | Todos los derechos reservados
                         <br/>
-                        {/*}
-                        <a className="text-white" href="/privacy-policy">
-                            Políticas de Privacidad
-                        </a>{" "}
-                        |{" "}
-                        <a className="text-white" href="/data-treatment">
-                            Tratamiento de datos
-                        </a>{" "}
-                        |{" "}
-                        <a className="text-white" href="/site-map">
-                            Mapa del Sitio
-                        </a>{" "}
-                        | Powered by:{" "}
-                        <a className="text-white" href="https://adasdigital.com/">
-                            ADAS Agencia Digital
-                        </a>
-                        */}
 
                     </div>
 
