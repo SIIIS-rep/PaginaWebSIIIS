@@ -6,7 +6,7 @@ export const FormValidate = () => {
 			message: "Este campo es requerido",
 		},
 		patternEmailRegister: {
-			value: /^[A-Z0-9._%+-]+@uptc\.edu\.co$/i,
+			value: /^[A-Z0-9._%+-]+@gmail\.com$/i,
 			message: "El email no es válido. Recuerda que debes registrarte con el correo institucional",
 		},
 		patternEmail: {
